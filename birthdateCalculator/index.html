@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate how much time passed since your birthday</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>How much time passed since your birth?</h1>
+
+    <div id="maincontainer">
+      <input type="date" id="calendar" />
+      <button type="button" onclick="calculateTime()" id="startstopbutton">
+        <p id="buttoncap">CALCULATE</p>
+      </button>
+      <p id="timePassed"></p>
+
+      <div>
+        <p>Time passed: <span id="howmuchtime"></span></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
