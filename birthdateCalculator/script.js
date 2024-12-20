@@ -11,16 +11,17 @@ function calculateTime() {
   let birthday = new Date(calendarInput.value);
   //how much time has passed since the set day til today
   let timeSinceBirthMili = today - birthday;
-  //how many years days/365
-  let timeSinceBirthYears = timeSinceBirthDays / 365;
-  //how many months days/12
-  let timeSinceBirthMonths = timeSinceBirthDays / 12;
-  //how many days=hours/24
-  let timeSinceBirthDays = timeSinceBirthHours / 24;
-  //how many hours seconds/60-minutes/60-hours
-  let timeSinceBirthHours = timeSinceBirthSeconds / 60 / 60;
   //how many seconds miliseconds/1000
   let timeSinceBirthSeconds = timeSinceBirthMili / 1000;
+  //how many hours seconds/60-minutes/60-hours
+  let timeSinceBirthHours = timeSinceBirthSeconds / 60 / 60;
+  //how many days=hours/24
+  let timeSinceBirthDays = timeSinceBirthHours / 24;
+  //how many years days/365
+  let timeSinceBirthYears = timeSinceBirthDays / 365;
+  /// how many months passed years/52
+  let timeSinceBirthMonths = timeSinceBirthYears / 52;
+
   howMuchTime.innerText =
     "Years since your birth: " +
     timeSinceBirthYears +
