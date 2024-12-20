@@ -14,6 +14,8 @@ function calculateTime() {
   let timeSinceBirthMili = today - birthday;
   //how many seconds miliseconds/1000
   let timeSinceBirthSeconds = Math.floor(timeSinceBirthMili / 1000);
+  //how many minutes seconds/60
+  let timeSinceBirthMinutes = Math.floor(timeSinceBirthSeconds / 60);
   //how many hours seconds/60-minutes/60-hours
   let timeSinceBirthHours = Math.floor(timeSinceBirthSeconds / 60 / 60);
   //how many days=hours/24
@@ -23,22 +25,16 @@ function calculateTime() {
   /// how many months passed years/52
   let timeSinceBirthMonths = Math.floor(timeSinceBirthYears / 12);
   //display calculations as a message
-  let message = (howMuchTime.innerText =
-    "Time passed: \n" +
-    "Years since your birth: " +
-    timeSinceBirthYears +
-    "\nMonths since your birth: " +
-    timeSinceBirthMonths +
-    "\nDays since your birth: " +
-    timeSinceBirthDays +
-    "\nHours since your birth: " +
-    timeSinceBirthHours +
-    "\nSeconds since your birth: " +
-    timeSinceBirthSeconds);
+  let message =
+    (howMuchTime.innerText = `Time passed since your birth:\n Years: ${timeSinceBirthYears}\n Months: ${timeSinceBirthMonths}\n Days: ${timeSinceBirthDays}\n Hours: ${timeSinceBirthHours}h\n Minutes: ${timeSinceBirthMinutes}min\n Seconds: ${timeSinceBirthSeconds}s`);
 
   // display birthday message and calculations
-  let birthdayMessage = "Happy Birthday!!!\n" + message;
+  let birthdayMessage = `Happy Birthday!!!\n ${message}`;
   //if the input is date in the future
+  if (calendarInput.value === "") {
+    howMuchTime.innerText = "No date selected";
+    return;
+  }
   if (birthday > today) {
     document.getElementById("howmuchtime").innerText =
       "Your birthday can't be in the future!";
@@ -49,6 +45,7 @@ function calculateTime() {
     birthday.getMonth() == today.getMonth() &&
     birthday.getDate() == today.getDate()
   ) {
+    //print out the birthday message and calculations
     howMuchTime.innerText = birthdayMessage;
   } else {
     //if its not the birthday display just the calculations
