@@ -13,17 +13,18 @@ function calculateTime() {
   //how much time has passed since the set day til today
   let timeSinceBirthMili = today - birthday;
   //how many seconds miliseconds/1000
-  let timeSinceBirthSeconds = timeSinceBirthMili / 1000;
+  let timeSinceBirthSeconds = Math.floor(timeSinceBirthMili / 1000);
   //how many hours seconds/60-minutes/60-hours
-  let timeSinceBirthHours = timeSinceBirthSeconds / 60 / 60;
+  let timeSinceBirthHours = Math.floor(timeSinceBirthSeconds / 60 / 60);
   //how many days=hours/24
-  let timeSinceBirthDays = timeSinceBirthHours / 24;
+  let timeSinceBirthDays = Math.floor(timeSinceBirthHours / 24);
   //how many years days/365
-  let timeSinceBirthYears = timeSinceBirthDays / 365;
+  let timeSinceBirthYears = Math.floor(timeSinceBirthDays / 365);
   /// how many months passed years/52
-  let timeSinceBirthMonths = timeSinceBirthYears / 12;
+  let timeSinceBirthMonths = Math.floor(timeSinceBirthYears / 12);
   //display calculations as a message
   let message = (howMuchTime.innerText =
+    "Time passed: \n" +
     "Years since your birth: " +
     timeSinceBirthYears +
     "\nMonths since your birth: " +
@@ -37,7 +38,12 @@ function calculateTime() {
 
   // display birthday message and calculations
   let birthdayMessage = "Happy Birthday!!!\n" + message;
-
+  //if the input is date in the future
+  if (birthday > today) {
+    document.getElementById("howmuchtime").innerText =
+      "Your birthday can't be in the future!";
+    return;
+  }
   //check if today is the birthday
   if (
     birthday.getMonth() == today.getMonth() &&

@@ -1,17 +1,106 @@
 * {
   box-sizing: border-box;
 }
+.ubuntu-light {
+  font-family: "Ubuntu", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-medium-italic {
+  font-family: "Ubuntu", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
+  background-color: rgb(255, 255, 255);
 }
+h1 {
+  margin-top: 7%;
+  font-size: 50px;
+  font-family: "Ubuntu", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 50px;
+}
+
+#maincontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Adds spacing between elements */
+  margin-top: 20px;
+  font-family: "Ubuntu", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 input {
-  color-scheme: dark;
+  background-color: #cff8ff70;
+  color: #23002e;
   width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
 #startstopbutton {
-  color-scheme: dark;
+  color: #000000;
+  background-color: #cff8ff70;
+  box-shadow: none;
+  border: none;
+  border-radius: 5%;
+  text-transform: capitalize;
+  width: 200px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#startstopbutton:hover {
+  background-color: rgb(180, 240, 240); /* Hover effect */
+}
+
+#timePassed {
+  text-align: left;
 }
