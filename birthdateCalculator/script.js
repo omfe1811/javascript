@@ -41,6 +41,7 @@ function calculateTime() {
     return;
   }
   //input is the current date
+
   if (
     birthday.getFullYear() === today.getFullYear() &&
     birthday.getMonth() === today.getMonth() &&
@@ -49,7 +50,14 @@ function calculateTime() {
     timeSinceBirthHours = 0;
     timeSinceBirthMinutes = 0;
     timeSinceBirthSeconds = 0;
-    howMuchTime.innerText = `You're ${secondsCounter}s old!`;
+    let myTimer = setInterval(() => {
+      var time = new Date().getSeconds();
+      howMuchTime.innerText = time;
+      /*you need to update the timer inside the setInterval function, only the 
+  code in here will update every second*/
+    }, 1000);
+
+    howMuchTime.innerText = `You're ${myTimer}s old!`;
     return;
   }
   //display an error message if the date is in the future
